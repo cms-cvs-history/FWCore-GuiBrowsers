@@ -17,6 +17,11 @@ from Vispa.Main import Profiling
 class LineDecayTreeTestCase(unittest.TestCase):
     def testExample(self):
         logging.debug(self.__class__.__name__ + ': testExample()')
+        try:
+            from pxl.algorithms import *
+        except Exception:
+            logging.info("LineDecayTree needs PXL: " + exception_traceback())
+            return
         self.app = QApplication(sys.argv)
         self.window = QMainWindow()
         self.window.setWindowTitle("test LineDecayTree")
