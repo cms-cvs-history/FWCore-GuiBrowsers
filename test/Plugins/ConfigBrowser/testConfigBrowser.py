@@ -8,7 +8,7 @@ logging.root.setLevel(logging.DEBUG)
 
 import Path
 from Vispa.Main.Directories import *
-examplesDirectory = os.path.join(baseDirectory,"examples/Plugins/ConfigBrowser")
+examplesDirectory = os.path.abspath(os.path.join(os.path.join(baseDirectory,".."),"examples"))
 
 from Vispa.Main.Application import *
 from Vispa.Main import Profiling
@@ -18,7 +18,7 @@ class ConfigBrowserTestCase(unittest.TestCase):
         logging.debug(self.__class__.__name__ +': testRun()')
         self.app=Application(sys.argv)
         self.app.mainWindow().setWindowTitle("test ConfigBrowser")
-        self.app.openFile(os.path.join(examplesDirectory,"patLayer1_fromLayer0_full_cfg_CMSSW_2_1_X.py"))
+        self.app.openFile(os.path.join(examplesDirectory,"patLayer1_fromAOD_full_cfg_CMSSW_3_1_X.py"))
         self.app.run()
 
 if __name__ == "__main__":
