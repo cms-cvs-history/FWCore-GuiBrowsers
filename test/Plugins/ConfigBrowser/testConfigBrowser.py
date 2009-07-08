@@ -8,7 +8,7 @@ logging.root.setLevel(logging.DEBUG)
 
 import Path
 from Vispa.Main.Directories import *
-examplesDirectory = os.path.join(baseDirectory,"examples/Plugins/ConfigBrowser")
+examplesDirectory = os.path.join(baseDirectory,"examples/ConfigBrowser")
 test=1
 if not os.path.exists(examplesDirectory):
     examplesDirectory = os.path.abspath(os.path.join(os.path.join(baseDirectory,".."),"examples"))
